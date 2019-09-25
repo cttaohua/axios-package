@@ -1,0 +1,54 @@
+{
+  "name": "axios-package",
+  "version": "0.1.0",
+  "description": "More advanced axios encapsulation methods",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "axios",
+    "ajax",
+    "封装",
+    "防止重复请求",
+    "前端",
+    "JavaScript",
+    "js",
+    "web"
+  ],
+  "author": "chentan",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cttaohua/axios-package"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "7.0.0",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/register": "7.0.0",
+    "@babel/runtime": "^7.6.2",
+    "axios": "^0.19.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "10.0.1",
+    "babel-jest": "23.6.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "cross-env": "^5.0.5",
+    "file-loader": "^1.1.4",
+    "node-sass": "^4.12.0",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
+  }
+}
