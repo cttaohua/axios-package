@@ -13,7 +13,7 @@ const api = new axiosp({
   timeout: 30000,
   ....  // 和axios使用方式一样
   ....  // 以下是axios-package新增的属性
-  forbidRepeat: true, // 是否允许重复请求，默认为true
+  forbidRepeat: true, // 是否允许重复请求，默认为true不允许 false为允许
   pathignore: [ // 需要过滤掉的请求，默认无
     ''
   ],

@@ -1,6 +1,6 @@
 
 const api = new axiosp({
-  baseURL: 'https://taohuayuanskill.com',
+  baseURL: 'http://api-server.dev.mofaxiao.com',
   timeout: 30000,
   validateStatus: function (status) {
     return status < 500
@@ -26,10 +26,8 @@ api.interceptors.response.use(res => {
 
 let button = document.querySelector('#button')
 button.addEventListener('click', function() {
-  api.get('/api/article/recommendList', {
-    article_id: 10024,
-    classify_id: 10005,
-    first_id: 10001
+  api.get('/lms/assigment/paper_pdf', {
+    assignment_id: ''
   }).then(response => {
     console.log(response)
   }).catch(error => {
