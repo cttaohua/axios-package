@@ -6,7 +6,11 @@ class axiosp {
   constructor (params) {
     // 自定义属性
     this.definedAttr = ['forbidRepeat', 'pathignore', 'repeatCallback']
-    this.forbidRepeat = params.forbidRepeat === true ? true : false // 默认开启
+    if (params.forbidRepeat === false) { // 默认开启
+      this.forbidRepeat = false
+    } else {
+      this.forbidRepeat = true
+    }
     this.pathignore = params.pathignore || [] // 默认无
     this.repeatCallback = params.repeatCallback || null
     // axios 实例
@@ -78,7 +82,7 @@ class axiosp {
       if (this.forbidRepeat) this.removePending(res.config)
       return res
     }, err => {
-      if (this.forbidRepeat) this.removePending(err.config)
+      if (this.forbidRepeat && err.config) this.removePending(err.config)
       return err
     })
   }
@@ -123,7 +127,5 @@ class axiosp {
   }
 
 }
-
-window.axiosp = axiosp
 
 export default axiosp
