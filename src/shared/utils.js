@@ -24,11 +24,15 @@ export function getAxiosParmas (config) {
  * 路径合并
  */
 export function pathMerge (baseUrl, mergeUrl) {
-  if (baseUrl.charAt(baseUrl.length - 1) !== '/') {
-    baseUrl = baseUrl + '/'
+  if (mergeUrl.indexOf(baseUrl) > -1) {
+    return mergeUrl
+  } else {
+    if (baseUrl.charAt(baseUrl.length - 1) !== '/') {
+      baseUrl = baseUrl + '/'
+    }
+    if (mergeUrl.charAt(0) === '/') {
+      mergeUrl = mergeUrl.substr(1, mergeUrl.length -1)
+    }
+    return baseUrl + mergeUrl
   }
-  if (mergeUrl.charAt(0) === '/') {
-    mergeUrl = mergeUrl.substr(1, mergeUrl.length -1)
-  }
-  return baseUrl + mergeUrl
 }

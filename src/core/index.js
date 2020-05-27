@@ -109,7 +109,7 @@ class axiosp {
 
   /* 移除已经发送过的请求 */
   removePending (config) {
-    let requestUrl = config.url + '&' + config.method + '&' + getAxiosParmas(config)
+    let requestUrl = pathMerge(config.baseURL, config.url) + '&' + config.method + '&' + getAxiosParmas(config)
     for (const p in this.pending) {
       if (this.pending[p].path === requestUrl) { /* 当前请求在数组中存在时 */
         this.pending.splice(p, 1) /* 把这条记录从数组中移除 */
