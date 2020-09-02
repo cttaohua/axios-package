@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { getAxiosParmas, pathMerge } from '../shared/utils'
-const cancelToken = axios.CancelToken
+var cancelToken = axios.CancelToken
 
 class axiosp {
   constructor (params) {
